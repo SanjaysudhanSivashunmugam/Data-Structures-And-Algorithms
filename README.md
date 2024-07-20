@@ -79,3 +79,17 @@ class Main{
     }
   }
 }
+```
+---
+### 1) Strings 
+---
+Init String:
+``` java
+public class Main
+{
+	public static void main(String[] args) {
+		String a = "Hello World"; //store String
+		System.out.print(a); //print String
+	}
+}
+```
