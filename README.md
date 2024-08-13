@@ -151,7 +151,6 @@ void insertAtPos(int pos,int v){
     }
 ```
 ##### Delete at Position:
-Time Complexity:o(n)
 ``` java
 void delete(int p){
         Node temp = head;
@@ -161,5 +160,20 @@ void delete(int p){
             temp = temp.next;
         }
         prev.next = temp.next;
+    }
+```
+##### Delete at Position:
+``` java
+ void reverse(){
+        Node prev = null;
+        Node curr = head;
+        Node next = head.next;
+        while(curr!=null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
     }
 ```
