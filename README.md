@@ -150,3 +150,16 @@ void insertAtPos(int pos,int v){
         temp.next = newNode;
     }
 ```
+##### Delete at Position:
+Time Complexity:o(n)
+``` java
+void delete(int p){
+        Node temp = head;
+        Node prev = null;
+        for(int i=1;i<=p;i++){
+            prev = temp;
+            temp = temp.next;
+        }
+        prev.next = temp.next;
+    }
+```
