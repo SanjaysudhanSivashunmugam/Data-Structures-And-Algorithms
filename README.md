@@ -177,3 +177,54 @@ void delete(int p){
         head = prev;
     }
 ```
+### 4) Doubly LinkedList 
+---
+##### Insert at beginning:
+``` java
+class LinkedList{
+    Node head;
+    class Node{
+        int data;
+        Node next;
+        Node(int val){
+            data = val;
+            next = null;
+        }
+    }
+    LinkedList(){
+        head = null;
+    }
+    void insertAtBeginning(int val){
+        Node newNode = new Node(val);
+        //when list is empty
+        if(head == null){
+            head = newNode;
+        }
+        //when list is not empty
+        else{
+            newNode.next = head;
+            head = newNode;
+        }
+    }
+    void display(){
+        Node temp = head;
+        while(temp != null){
+            System.out.print(temp.data+" ");
+            temp = temp.next;
+        }
+    }
+}
+
+class Main{
+    public static void main(String args[]){
+        LinkedList LL = new LinkedList();
+        LL.insertAtBeginning(1);
+        LL.insertAtBeginning(2);
+        LL.insertAtBeginning(3);
+        LL.insertAtBeginning(4);
+        LL.insertAtBeginning(5);
+        LL.insertAtBeginning(6);
+        LL.display();
+    }
+}
+```
