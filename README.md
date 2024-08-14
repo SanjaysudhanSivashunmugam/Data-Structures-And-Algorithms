@@ -183,48 +183,50 @@ void delete(int p){
 ``` java
 class LinkedList{
     Node head;
+    Node tail;
     class Node{
         int data;
+        Node prev;
         Node next;
-        Node(int val){
-            data = val;
+        Node(int v){
+            data = v;
             next = null;
+            prev = null;
         }
     }
     LinkedList(){
         head = null;
+        tail = null;
     }
-    void insertAtBeginning(int val){
-        Node newNode = new Node(val);
-        //when list is empty
+    void insert(int v){
+        Node nn = new Node(v);
         if(head == null){
-            head = newNode;
+            head = nn;
+            tail = nn;
         }
-        //when list is not empty
         else{
-            newNode.next = head;
-            head = newNode;
+            head.prev = nn;
+            nn.next = head;
+            head = nn;
         }
     }
-    void display(){
+    void print(){
         Node temp = head;
-        while(temp != null){
-            System.out.print(temp.data+" ");
+        while(temp!= null){
+            System.out.print(temp.data+" -> ");
             temp = temp.next;
         }
     }
 }
-
 class Main{
     public static void main(String args[]){
-        LinkedList LL = new LinkedList();
-        LL.insertAtBeginning(1);
-        LL.insertAtBeginning(2);
-        LL.insertAtBeginning(3);
-        LL.insertAtBeginning(4);
-        LL.insertAtBeginning(5);
-        LL.insertAtBeginning(6);
-        LL.display();
+       LinkedList ll = new LinkedList();
+       ll.insert(1);
+       ll.insert(3);
+       ll.insert(6);
+       ll.insert(5);
+       ll.insert(4);
+       ll.print();
     }
 }
 ```
