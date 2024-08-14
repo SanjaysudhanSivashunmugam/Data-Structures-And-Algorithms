@@ -228,3 +228,13 @@ class Main{
     }
 }
 ```
+#### Display Reverse:
+```java
+void printRev(){
+        Node temp = tail;
+        while(temp!= null){
+            System.out.print(temp.data+" -> ");
+            temp = temp.prev;
+        }
+    }
+```
